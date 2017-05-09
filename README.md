@@ -12,17 +12,19 @@ https://www.paessler.com/manuals/prtg/http_push_data_advanced_sensor
 Install PM2 module:
 ~~~
 pm2 install pm2-prtg-sensor
+pm2 show pm2-prtg-sensor
 ~~~
 
-- Update the config.js with the port and token values.
+- Note the exec cwd path
+- Update the config.js in the exec path with the port and token values.
 - Adjust the reporting interval time
+
+~~~
+pm2 restart pm2-prtg-sensor
+~~~
 
 All running services in PM2 will now report cpu and memory data to prtg.
 
-Uninstall PM2 module:
-~~~
-pm2 uninstall pm2-prtg-sensor
-~~~
 
 
 

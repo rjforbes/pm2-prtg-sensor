@@ -22,7 +22,7 @@ function errback(err, resp){
     for (var index = 0; index < resp.length; index++) {
         var element = resp[index];
         sensorArray.push({"channel": (element.name + "-memory"),"value": element.monit.memory,"unit": "custom","customunit": "memory"});
-        sensorArray.push({"channel": (element.name + "-cpu"),"value": element.monit.cpu,"unit": "custom","customunit": "cpu"});
+        sensorArray.push({"channel": (element.name + "-cpu"),"value": element.monit.cpu,"unit": "custom","customunit": "cpu","float": "1"});
     }
     var sensor = {prtg:{result:sensorArray},text:""};
     var url = config.prtg_server + config.prtg_token + "?content=" + JSON.stringify(sensor);
